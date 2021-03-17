@@ -9,17 +9,17 @@
         <div class="flex my-10 flex-col lg:flex-row">
             <div class="recently-reviewed w-full lg:w-3/4 lg:mr-32">
                 <h2 class="text-blue-500 uppercase tracking-wide font-semibold">Recently Reviewed</h2>
-                <livewire:recently-reviewed-games />
+{{--                <livewire:recently-reviewed-games />--}}
             </div>
             <div class="side-bar w-full mt-12 lg:w-1/4 lg:mt-0">
                 <div class="most-anticipated">
                     <h2 class="text-blue-500 uppercase tracking-wide font-semibold">Most Anticipated</h2>
-                    <livewire:most-anticipated-games />
+{{--                    <livewire:most-anticipated-games />--}}
                 </div>
 
             <div class="coming-soon mt-12">
                 <h2 class="text-blue-500 uppercase tracking-wide font-semibold">Coming Soon</h2>
-                <livewire:coming-soon-games />
+{{--                <livewire:coming-soon-games />--}}
             </div>
         </div>
 
