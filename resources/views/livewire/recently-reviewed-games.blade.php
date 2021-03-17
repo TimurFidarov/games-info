@@ -1,5 +1,5 @@
 <div class="recently-reviewed-container space-y-12 mt-8" wire:init="loadRecentlyReviewed">
-    @foreach($recentlyReviewed as $game)
+    @forelse($recentlyReviewed as $game)
         <div class="game bg-gray-800 rounded-lg shadow-md flex px-6 py-6">
             <div class="relative flex-none">
                 <a href="#">
@@ -33,7 +33,31 @@
                     {{$game['summary']}}
                 </p>
             </div>
-
         </div>
-    @endforeach
+    @empty
+        @foreach(range(1,4) as $game)
+            <div class="game bg-gray-800 rounded-lg shadow-md flex px-6 py-6">
+                <div class="relative flex-none">
+                    <div class="bg-gray-700 w-32 lg:w-48 xl:w-56 h-44 lg:h-56 xl:h-64 rounded"></div>
+                </div>
+                <div class="ml-12">
+                    <div class="inline-block text-transparent bg-gray-700 text-lg rounded leading-tight mt-4">
+                        Title goes here
+                    </div>
+                    <div class="mt-10 space-y-4 hidden xl:block">
+                        <div class="text-transparent inline-block bg-gray-700 rounded">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur.
+                        </div>
+                        <div class="text-transparent inline-block bg-gray-700 rounded">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur.
+                        </div>
+                        <div class="text-transparent inline-block bg-gray-700 rounded">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    @endforelse
+
 </div>

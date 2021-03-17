@@ -4,12 +4,12 @@
 @section('content')
     <div class="container mx-auto px-4">
         <h2 class="text-blue-500 uppercase tracking-wide font-semibold">Popular Games</h2>
-        <livewire:popular-games></livewire:popular-games>
+{{--        <livewire:popular-games></livewire:popular-games>--}}
 
         <div class="flex my-10 flex-col lg:flex-row">
             <div class="recently-reviewed w-full lg:w-3/4 lg:mr-32">
                 <h2 class="text-blue-500 uppercase tracking-wide font-semibold">Recently Reviewed</h2>
-{{--                <livewire:recently-reviewed-games />--}}
+                <livewire:recently-reviewed-games />
             </div>
             <div class="side-bar w-full mt-12 lg:w-1/4 lg:mt-0">
                 <div class="most-anticipated">
