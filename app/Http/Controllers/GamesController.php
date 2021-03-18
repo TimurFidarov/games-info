@@ -47,7 +47,7 @@ class GamesController extends Controller
      */
     public function show($slug)
     {
-        dump( $game = Http::withHeaders([
+        $game = Http::withHeaders([
             'Client-ID' => env('Client_ID'),
             'Authorization' => 'Bearer ' . env('Auth_Key')
         ])->withBody(
@@ -56,7 +56,7 @@ class GamesController extends Controller
             similar_games.rating,similar_games.platforms.abbreviation,similar_games.slug;
                     where slug = \"{$slug}\";",
             'text/plain'
-        )->post('https://api.igdb.com/v4/games')->json());
+        )->post('https://api.igdb.com/v4/games')->json();
 
         return view('show', ['game' => $game[0]]);
     }

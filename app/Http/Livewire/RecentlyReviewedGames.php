@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class RecentlyReviewedGames extends Component
@@ -13,7 +14,7 @@ class RecentlyReviewedGames extends Component
 
     public function loadRecentlyReviewed(){
 
-        $this->recentlyReviewed =  Cache::remember('recently-reviewed', 30, function () {
+        $unformattedRecentlyReviewed =  Cache::remember('recently-reviewed', 30, function () {
             $before = Carbon::now()->subMonths(2)->timestamp;
             $current = Carbon::now()->timestamp;
 
@@ -30,10 +31,21 @@ class RecentlyReviewedGames extends Component
                         limit 3;",'text/plain'
             )->post('https://api.igdb.com/v4/games')->json();
         });
+        $this->recentlyReviewed = $this->formatForView($unformattedRecentlyReviewed);
     }
 
     public function render()
     {
         return view('livewire.recently-reviewed-games');
+    }
+
+    private function formatForView($games) {
+        return collect($games)->map(function($game) {
+            return collect($game)->merge([
+                'coverImageUrl' => Str::replaceFirst('thumb','cover_big', $game['cover']['url']),
+                'rating' => isset($game['rating']) ? round($game['rating']) . '%' : null,
+                'platforms' => collect($game['platforms'])->pluck('abbreviation')->implode(',')
+            ]);
+        });
     }
 }

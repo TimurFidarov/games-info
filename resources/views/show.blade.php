@@ -120,7 +120,7 @@
                     <div class= "game mt-8">
                     <div class="relative inline-block">
                         @if(isset($game['cover']))
-                        <a href="/show/{{$game['slug']}}">
+                        <a href="/games/{{ $game['slug'] }}">
                             <img  src="{{ Str::replaceFirst('thumb', 'cover_big', $game['cover']['url'])}}" alt="game
                             cover"
                                   class="hover:opacity-75
@@ -139,7 +139,7 @@
                             </div>
                         @endif
                     </div>
-                    <a href="/show/{{$game['slug']}}" class="block text-base font-semibold leading-tight
+                    <a href="/games/{{ $game['slug'] }}" class="block text-base font-semibold leading-tight
                     hover:text-gray-400
                     mt-8">
                         {{$game['name']}}
