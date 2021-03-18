@@ -6,7 +6,7 @@ border-b
     @forelse($popularGames as $game)
         <div class="game mt-8">
             <div class="relative inline-block">
-                <a href="#">
+                <a href="/show/{{$game['slug']}}">
                     <img  src="{{ Str::replaceFirst('thumb', 'cover_big', $game['cover']['url'])}}" alt="game
                             cover"
                           class="hover:opacity-75

@@ -15,70 +15,7 @@ class GamesController extends Controller
      */
     public function index()
     {
-        $before = Carbon::now()->subMonths(2)->timestamp;
-        $after = Carbon::now()->addMonths(2)->timestamp;
-        $current = Carbon::now()->timestamp;
-
-//        $popularGames = Http::withHeaders([
-//           'Client-ID' => env('Client_ID'),
-//            'Authorization' => 'Bearer ' . env('Auth_Key')
-//        ])->withBody(
-//            "fields name, cover.url, first_release_date, total_rating_count, platforms.abbreviation, rating, slug;
-//                    where platforms = (48,49,130,6)
-//                    & (first_release_date >= {$before}
-//                    & first_release_date < {$after}
-//                    & total_rating_count > 5);
-//                    sort total_rating_count desc;
-//                    limit 12;",'text/plain'
-//        )->post('https://api.igdb.com/v4/games')->json();
-
-
-//        $recentlyReviewed = Http::withHeaders([
-//            'Client-ID' => env('Client_ID'),
-//            'Authorization' => 'Bearer ' . env('Auth_Key')
-//        ])->withBody(
-//            "fields name, cover.url, first_release_date, total_rating_count, platforms.abbreviation, rating, slug, summary;
-//                    where platforms = (48,49,130,6)
-//                    & (first_release_date >= {$before}
-//                    & first_release_date < {$current}
-//                    & total_rating_count > 5);
-//                    sort total_rating_count desc;
-//                    limit 3;",'text/plain'
-//        )->post('https://api.igdb.com/v4/games')->json();
-
-//        $mostAnticipated = Http::withHeaders([
-//            'Client-ID' => env('Client_ID'),
-//            'Authorization' => 'Bearer ' . env('Auth_Key')
-//        ])->withBody(
-//            "fields name, cover.url, first_release_date, hypes, platforms.abbreviation, summary, slug;
-//                    where platforms = (48,49,130,6)
-//                        & (first_release_date >= {$current}
-//                        & first_release_date < {$after}
-//                        & hypes > 5);
-//                    sort hypes desc;
-//                    limit 4;",'text/plain'
-//        )->post('https://api.igdb.com/v4/games')->json();
-
-//        $comingSoon = Http::withHeaders([
-//            'Client-ID' => env('Client_ID'),
-//            'Authorization' => 'Bearer ' . env('Auth_Key')
-//        ])->withBody(
-//            "fields name, cover.url, first_release_date, hypes, platforms.abbreviation, summary, slug;
-//                    where platforms = (48,49,130,6)
-//                        & (first_release_date >= {$current}
-//                        & first_release_date < {$after}
-//                        & hypes > 5);
-//                    sort first_release_date asc;
-//                    limit 3;",'text/plain'
-//        )->post('https://api.igdb.com/v4/games')->json();
-
-
-        return view('index', [
-//            'popularGames' => $popularGames,
-//            'recentlyReviewed' => $recentlyReviewed,
-//            'mostAnticipated' => $mostAnticipated,
-//            'comingSoon' => $comingSoon
-        ]);
+        return view('index');
     }
 
     /**
@@ -105,12 +42,23 @@ class GamesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        dump( $game = Http::withHeaders([
+            'Client-ID' => env('Client_ID'),
+            'Authorization' => 'Bearer ' . env('Auth_Key')
+        ])->withBody(
+            "fields name, cover.url, first_release_date, total_rating_count, platforms.abbreviation, rating, slug,
+            involved_companies.company.name,genres.name,aggregated_rating, summary, websites.*, videos.*,screenshots.*,similar_games.cover.url,similar_games.name,
+            similar_games.rating,similar_games.platforms.abbreviation,similar_games.slug;
+                    where slug = \"{$slug}\";",
+            'text/plain'
+        )->post('https://api.igdb.com/v4/games')->json());
+
+        return view('show', ['game' => $game[0]]);
     }
 
     /**
