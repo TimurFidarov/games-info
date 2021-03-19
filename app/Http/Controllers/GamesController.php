@@ -58,7 +58,7 @@ class GamesController extends Controller
                     where slug = \"{$slug}\";",
             'text/plain'
         )->post('https://api.igdb.com/v4/games')->json();
-
+        if(!$game) abort(404);
         return view('show', ['game' => $this->formatGameForView($game[0])]);
     }
 

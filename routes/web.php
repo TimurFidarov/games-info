@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'GamesController@index');
 
 
-Route::get('/games/{slug}', "GamesController@show");
+Route::get('/games/{slug}', "GamesController@show")->name('games.show');
 
