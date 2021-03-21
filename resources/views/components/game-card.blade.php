@@ -15,7 +15,7 @@
                 </div>
             </div>
             @push('scripts')
-                @include('_rating', ['rating' => $game['rating'], 'slug' => $game["slug"]])
+                @include('_rating', ['rating' => $game['rating'], 'slug' => $game["slug"], 'event' => null])
             @endpush
         @endif
     </div>

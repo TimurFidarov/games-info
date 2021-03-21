@@ -32,7 +32,7 @@
                             <div id="mRating" class="font-semibold text-xs flex justify-center items-center h-full
                             relative">
                                 @push('scripts')
-                                    @include('_rating', ['rating' => $game['mRating'], 'slug' => 'mRating'])
+                                    @include('_rating', ['rating' => $game['mRating'],'slug' => 'mRating','event' => null])
                                 @endpush
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                             <div id="cRating" class="font-semibold text-xs flex justify-center items-center h-full
                             relative">
                                 @push('scripts')
-                                    @include('_rating', ['rating' => $game['cRating'], 'slug' => 'cRating'])
+                                    @include('_rating', ['rating' => $game['cRating'], 'slug' => 'cRating', 'event' => null])
                                 @endpush
                             </div>
                         </div>

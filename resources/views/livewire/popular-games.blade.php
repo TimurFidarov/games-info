@@ -20,4 +20,9 @@ border-b
         </div>
         @endforeach
     @endforelse
+
+    @push('scripts')
+            @include('_rating', ['event' => 'gameWithRatingAdded'])
+    @endpush
 </div><!--  end popular games -->
+
