@@ -29,16 +29,22 @@
                 <div class="flex flex-wrap items-center mt-8">
                     <div class="flex items-center">
                         <div class="w-16 h-16 bg-gray-800 rounded-full">
-                            <div class="font-semibold text-xs flex justify-center items-center h-full">
-                                {{ $game['mRating'] }}
+                            <div id="mRating" class="font-semibold text-xs flex justify-center items-center h-full
+                            relative">
+                                @push('scripts')
+                                    @include('_rating', ['rating' => $game['mRating'], 'slug' => 'mRating'])
+                                @endpush
                             </div>
                         </div>
                         <div class="ml-4 text-xs">Member <br> Score</div>
                     </div>
                     <div class="flex items-center ml-12">
                         <div class="w-16 h-16 bg-gray-800 rounded-full">
-                            <div class="font-semibold text-xs flex justify-center items-center h-full">
-                                {{ $game['cRating'] }}
+                            <div id="cRating" class="font-semibold text-xs flex justify-center items-center h-full
+                            relative">
+                                @push('scripts')
+                                    @include('_rating', ['rating' => $game['cRating'], 'slug' => 'cRating'])
+                                @endpush
                             </div>
                         </div>
                         <div class="ml-4 text-xs">Critic <br> Score</div>
