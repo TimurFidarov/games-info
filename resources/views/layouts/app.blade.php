@@ -23,18 +23,7 @@
                 </ul>
             </div>
             <div class="flex items-center mt-6 lg:mt-0">
-                <div class="relative">
-                    <input type="text" class="bg-gray-800 text-sm rounded-full px-3 py-1 pl-8 w-64 focus:outline-none focus:ring" placeholder="Search...">
-                    <div class="absolute top-0 flex items-center h-full ml-2">
-                        <svg class="fill-current text-gray-400 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <title>zoom-2</title>
-                            <g stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" fill="" stroke="#909090">
-                                <line fill="none" stroke-miterlimit="10" x1="22" y1="22" x2="16.4" y2="16.4"></line>
-                                <circle fill="none" stroke="#909090" stroke-miterlimit="10" cx="10" cy="10" r="9"></circle>
-                            </g></svg>
-                    </div>
-                </div>
-
+                <livewire:search-dropdown />
                 <div class="ml-6">
                     <a href="#"><img src="/avatar.svg" alt="avatar" class="rounded-full w-8"></a>
                 </div>
@@ -49,7 +38,7 @@
 
     <footer class="border-t border-gray-800">
         <div class="container mx-auto px-4 py-6">
-            Powered By <a href="" class="underline hover:text-gray-400">IGDB API</a>
+            Powered By <a href="https://www.igdb.com/api" class="underline hover:text-gray-400">IGDB API</a>
         </div>
     </footer>
     <livewire:scripts />

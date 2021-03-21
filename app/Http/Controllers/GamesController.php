@@ -132,6 +132,7 @@ class GamesController extends Controller
                 })->first(),
                 'instagram' => collect($game['websites'])->filter(function($website) {
                     return Str::contains($website['url'], 'instagram');
+
                 })->first(),
             ]
         ]);
