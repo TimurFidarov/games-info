@@ -13,17 +13,23 @@
                     {{$game['name']}}
                 </h2>
                 <div class="text-gray-400 mt-8">
-                    <span>
-                        {{ $game['genres'] }}
-                    </span>
-                    &middot;
-                    <span>
-                        {{$game['companies']}}
-                    </span>
-                    &middot;
-                    <span>
-                        {{ $game['platforms'] }}
-                    </span>
+                    @if(isset($game['genres']))
+                        <span>
+                            {{ $game['genres'] }}
+                        </span>
+                        &middot;
+                    @endif
+                    @if(isset($game['comapnies']))
+                        <span>
+                            {{$game['companies']}}
+                        </span>
+                        &middot;
+                    @endif
+                    @if(isset($game['platforms']))
+                        <span>
+                            {{ $game['platforms'] }}
+                        </span>
+                    @endif
                 </div>
 
                 <div class="flex flex-wrap items-center mt-8">
@@ -81,9 +87,11 @@
                         @endif
                     </div>
                 </div>
+                @if(isset($game['summary']))
                 <p class="mt-12">
                     {{$game['summary']}}
                 </p>
+                @endif
                 @if(isset($game['trailer']))
                     <div class="mt-12" x-data="{ isTrailerModalVisible: false }">
                         <button
@@ -126,6 +134,7 @@
             class="images-container border-b border-gray-800 pb-12 mt-8"
             x-data="{ isImageModalVisible: false, image: '' }"
         >
+            @if(isset($game['screenshots']))
             <h2 class="text-blue-500 uppercase tracking-wide font-semibold">Screenshots</h2>
             <div class="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-8">
                 @foreach ($game['screenshots'] as $screenshot)
@@ -166,19 +175,20 @@
                 </div>
             </template>
         </div> <!-- end images-container -->
+        @endif
 
-        <div class="similar-games-container pb-12 mt-8">
-            <h2 class="text-blue-500 uppercase tracking-wide font-semibold">
-                Similar Games
-            </h2>
-            <div class="similar-games text-sm grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-12">
-                @foreach($game['similarGames'] as $game)
-                    <x-game-card :game="$game" />
-                @endforeach
+        @if(isset($game['similarGames']))
+            <div class="similar-games-container pb-12 mt-8">
+                <h2 class="text-blue-500 uppercase tracking-wide font-semibold">
+                    Similar Games
+                </h2>
+                <div class="similar-games text-sm grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-12">
+                    @foreach($game['similarGames'] as $game)
+                        <x-game-card :game="$game" />
+                    @endforeach
+                </div>
             </div>
-
-        </div>
-
+        @endif
     </div>
 
 @endsection

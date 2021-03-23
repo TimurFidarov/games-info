@@ -18,9 +18,10 @@
                     <img src="/logo.svg" alt="logo" class="w-32 flex-none">
                 </a>
                 <ul class="flex lg:ml-16 space-x-8 mt-6 lg:mt-0">
-                    <li><a href="#" class="hover:text-gray-400">Games</a></li>
-                    <li><a href="#" class="hover:text-gray-400">Reviews</a></li>
-                    <li><a href="#" class="hover:text-gray-400">Coming soon</a></li>
+                    <li><a href="/" class="hover:text-gray-400">Games</a></li>
+                    <li><a href="/#recently-reviewed" class="hover:text-gray-400"
+                           onclick="document.getElementById('recently-reviewed').scrollIntoView()">Reviews</a></li>
+                    <li><a href="/#coming-soon" class="hover:text-gray-400" onclick="document.getElementById('recently-reviewed').scrollIntoView()">Coming soon</a></li>
                 </ul>
             </div>
             <div class="flex items-center mt-6 lg:mt-0">

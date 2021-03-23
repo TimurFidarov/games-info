@@ -21,8 +21,10 @@ class SearchDropdown extends Component
         ])->withBody(
             "search \"{$this->search}\";
             fields name, cover.url, slug;
+            where total_rating_count > 5;
                     limit 6;", 'text/plain'
         )->post('https://api.igdb.com/v4/games')->json();
+
         return view('livewire.search-dropdown');
     }
 }

@@ -1,6 +1,6 @@
 <div class="relative" x-data="{ isVisible: true }" @click.away="isVisible = false">
     <input
-        wire:model.debounce.300ms="search"
+        wire:model.debounce.600ms="search"
         type="text"
         class="bg-gray-800 text-sm rounded-full
         px-3 py-1 pl-8 w-64 focus:outline-none focus:ring"

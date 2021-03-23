@@ -53,7 +53,8 @@ class RecentlyReviewedGames extends Component
                 'coverImageUrl' => isset($game['cover']) ? Str::replaceFirst('thumb','cover_big', $game['cover']['url'])
                     : 'https://via.placeholder.com/264x352',
                 'rating' => isset($game['rating']) ? round($game['rating']) : null,
-                'platforms' => collect($game['platforms'])->pluck('abbreviation')->implode(', ')
+                'platforms' => isset($game['platforms']) ? collect($game['platforms'])->pluck('abbreviation')->implode
+                    (', ') : null
             ]);
         });
     }
