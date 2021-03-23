@@ -59,8 +59,10 @@
                         @endif
                         @if(isset($game['social']['facebook']))
                             <div class="w-8 h-8 bg-gray-800 rounded-full flex justify-center items-center hover:opacity-75">
-                            <a href="{{$game['social']['facebook']['url']}}" target="_blank"><svg class="w-5 h-5 fill-current"
-                                                                               viewBox="0 0 16 18" fill="none"><g clip-path="url(#clip0)"><path d="M8.004 4.957c-2.272 0-4.104 1.804-4.104 4.04 0 2.235 1.832 4.039 4.104 4.039 2.271 0 4.103-1.804 4.103-4.04 0-2.235-1.832-4.039-4.103-4.039zm0 6.666c-1.468 0-2.668-1.178-2.668-2.627 0-1.448 1.196-2.626 2.668-2.626 1.471 0 2.667 1.178 2.667 2.626 0 1.449-1.2 2.627-2.667 2.627zm5.228-6.831a.948.948 0 01-.957.942.948.948 0 01-.957-.942.95.95 0 01.957-.942.95.95 0 01.957.942zm2.718.956c-.06-1.262-.354-2.38-1.293-3.301-.936-.921-2.071-1.21-3.353-1.273C9.982 1.1 6.02 1.1 4.7 1.174c-1.279.06-2.414.348-3.354 1.27-.939.92-1.228 2.038-1.292 3.3-.075 1.301-.075 5.2 0 6.5.06 1.263.353 2.381 1.292 3.302.94.921 2.072 1.21 3.354 1.273 1.321.074 5.282.074 6.604 0 1.282-.06 2.417-.348 3.353-1.273.936-.921 1.229-2.039 1.293-3.301.075-1.3.075-5.196 0-6.497zm-1.707 7.893a2.68 2.68 0 01-1.522 1.497c-1.053.412-3.553.317-4.717.317-1.165 0-3.668.091-4.718-.317a2.68 2.68 0 01-1.522-1.497c-.418-1.037-.321-3.498-.321-4.645 0-1.146-.093-3.61.321-4.644a2.68 2.68 0 011.522-1.497c1.053-.412 3.553-.317 4.718-.317 1.164 0 3.667-.091 4.717.317.7.274 1.24.805 1.522 1.497.418 1.037.321 3.498.321 4.644 0 1.147.097 3.611-.321 4.645z" /></g><defs><clipPath id="clip0"><path fill="#fff" d="M0 0h16v18H0z"/></clipPath></defs></svg></a>
+                            <a href="{{$game['social']['facebook']['url']}}" target="_blank">
+                                <svg class="w-5 h-5 fill-current"
+                                     viewBox="0 0 14 16" fill="none"><path d="M14 2.5v11a1.5 1.5 0 01-1.5 1.5H9.834V9.463h1.894L12 7.35H9.834V6c0-.612.17-1.028 1.047-1.028H12V3.084A15.044 15.044 0 0010.369 3C8.756 3 7.65 3.984 7.65 5.794v1.56h-1.9v2.112h1.903V15H1.5A1.5 1.5 0 010 13.5v-11A1.5 1.5 0 011.5 1h11A1.5 1.5 0 0114 2.5z" /></svg>
+                            </a>
                         </div>
                         @endif
                         @if(isset($game['social']['twitter']))
@@ -71,8 +73,10 @@
                         @endif
                         @if(isset($game['social']['instagram']))
                             <div class="w-8 h-8 bg-gray-800 rounded-full flex justify-center items-center hover:opacity-75">
-                                    <a href="{{$game['social']['instagram']['url']}}" target="_blank"><svg class="w-5 h-5 fill-current"
-                                                                                   viewBox="0 0 14 16" fill="none"><path d="M14 2.5v11a1.5 1.5 0 01-1.5 1.5H9.834V9.463h1.894L12 7.35H9.834V6c0-.612.17-1.028 1.047-1.028H12V3.084A15.044 15.044 0 0010.369 3C8.756 3 7.65 3.984 7.65 5.794v1.56h-1.9v2.112h1.903V15H1.5A1.5 1.5 0 010 13.5v-11A1.5 1.5 0 011.5 1h11A1.5 1.5 0 0114 2.5z" /></svg></a>
+                                    <a href="{{$game['social']['instagram']['url']}}" target="_blank">
+                                        <svg class="w-5 h-5 fill-current"
+                                             viewBox="0 0 16 18" fill="none"><g clip-path="url(#clip0)"><path d="M8.004 4.957c-2.272 0-4.104 1.804-4.104 4.04 0 2.235 1.832 4.039 4.104 4.039 2.271 0 4.103-1.804 4.103-4.04 0-2.235-1.832-4.039-4.103-4.039zm0 6.666c-1.468 0-2.668-1.178-2.668-2.627 0-1.448 1.196-2.626 2.668-2.626 1.471 0 2.667 1.178 2.667 2.626 0 1.449-1.2 2.627-2.667 2.627zm5.228-6.831a.948.948 0 01-.957.942.948.948 0 01-.957-.942.95.95 0 01.957-.942.95.95 0 01.957.942zm2.718.956c-.06-1.262-.354-2.38-1.293-3.301-.936-.921-2.071-1.21-3.353-1.273C9.982 1.1 6.02 1.1 4.7 1.174c-1.279.06-2.414.348-3.354 1.27-.939.92-1.228 2.038-1.292 3.3-.075 1.301-.075 5.2 0 6.5.06 1.263.353 2.381 1.292 3.302.94.921 2.072 1.21 3.354 1.273 1.321.074 5.282.074 6.604 0 1.282-.06 2.417-.348 3.353-1.273.936-.921 1.229-2.039 1.293-3.301.075-1.3.075-5.196 0-6.497zm-1.707 7.893a2.68 2.68 0 01-1.522 1.497c-1.053.412-3.553.317-4.717.317-1.165 0-3.668.091-4.718-.317a2.68 2.68 0 01-1.522-1.497c-.418-1.037-.321-3.498-.321-4.645 0-1.146-.093-3.61.321-4.644a2.68 2.68 0 011.522-1.497c1.053-.412 3.553-.317 4.718-.317 1.164 0 3.667-.091 4.717.317.7.274 1.24.805 1.522 1.497.418 1.037.321 3.498.321 4.644 0 1.147.097 3.611-.321 4.645z" /></g><defs><clipPath id="clip0"><path fill="#fff" d="M0 0h16v18H0z"/></clipPath></defs></svg>
+                                    </a>
                                 </div>
                         @endif
                     </div>
@@ -81,38 +85,88 @@
                     {{$game['summary']}}
                 </p>
                 @if(isset($game['trailer']))
-                <div class="mt-12">
-                    <a href="{{$game['trailer']}}" target="_blank">
-                    <button class="flex bg-blue-500 font-semibold px-4 py-4 hover:bg-blue-600 rounded
-                    transition ease-in-out duration-150">
-                        <svg class="w-6 fill-current" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                    <div class="mt-12" x-data="{ isTrailerModalVisible: false }">
+                        <button
+                            @click="isTrailerModalVisible = true"
+                            class="flex bg-blue-500 text-white font-semibold px-4 py-4 hover:bg-blue-600 rounded transition ease-in-out duration-150"
+                        >
+                            <svg class="w-6 fill-current" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                            <span class="ml-2">Play Trailer</span>
+                        </button>
 
-                        <span class="ml-2">Play Trailer</span>
-                    </button>
-                    </a>
-                </div>
+                        <template x-if="isTrailerModalVisible">
+                            <div class="z-50 fixed top-0 left-0 w-full h-full flex items-center shadow-lg
+                            overflow-y-auto bg-opacity-50 bg-black">
+                                <div class="container mx-auto lg:px-32 rounded-lg overflow-y-auto">
+                                    <div class="bg-gray-900 rounded">
+                                        <div class="flex justify-end pr-4 pt-2">
+                                            <button
+                                                @click="isTrailerModalVisible = false"
+                                                @keydown.escape.window="isTrailerModalVisible = false"
+                                                class="text-3xl leading-none hover:text-gray-300"
+                                            >
+                                                &times;
+                                            </button>
+                                        </div>
+                                        <div class="modal-body px-8 py-8" @click.away="isTrailerModalVisible = false">
+                                            <div class="responsive-container overflow-hidden relative" style="padding-top: 56.25%">
+                                                <iframe width="560" height="315" class="responsive-iframe absolute top-0 left-0 w-full h-full" src="{{ $game['trailer'] }}" style="border:0;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
                 @endif
             </div>
         </div> <!-- end game-details -->
 
-        <div class="screenshots-container pb-12 mt-8 border-b
-        border-gray-800">
-            <h2 class="text-blue-500 uppercase tracking-wide font-semibold">
-                Screenshots
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-8">
-                @foreach($game['screenshots'] as $screenshot)
+        <div
+            class="images-container border-b border-gray-800 pb-12 mt-8"
+            x-data="{ isImageModalVisible: false, image: '' }"
+        >
+            <h2 class="text-blue-500 uppercase tracking-wide font-semibold">Screenshots</h2>
+            <div class="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-8">
+                @foreach ($game['screenshots'] as $screenshot)
                     <div>
-                        <a href="{{ $screenshot['huge'] }}">
-                            <img src="{{ $screenshot['big'] }}"
-                                 alt="screenshot" class="hover:opacity-75 transition ease-in-out
-                            duration-150">
+                        <a
+                            href="#"
+                            @click.prevent="
+                                isImageModalVisible = true
+                                image='{{ $screenshot['huge'] }}'
+                            "
+                        >
+                            <img src="{{ $screenshot['big'] }}" alt="screenshot" class="hover:opacity-75 transition
+                            ease-in-out duration-150">
                         </a>
                     </div>
                 @endforeach
             </div>
-        </div>
+
+            <template x-if="isImageModalVisible">
+                <div class="z-50 fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto
+                bg-opacity-50 bg-black">
+                    <div class="container mx-auto lg:px-32 rounded-lg overflow-y-auto">
+                        <div class="bg-gray-900 rounded">
+                            <div class="flex justify-end pr-4 pt-2">
+                                <button
+                                    class="text-3xl leading-none hover:text-gray-300"
+                                    @click="isImageModalVisible = false"
+                                    @keydown.escape.window="isImageModalVisible = false"
+                                >
+                                    &times;
+                                </button>
+                            </div>
+                            <div class="modal-body px-8 py-8" @click.away="isImageModalVisible = false">
+                                <img :src="image" alt="screenshot">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div> <!-- end images-container -->
+
         <div class="similar-games-container pb-12 mt-8">
             <h2 class="text-blue-500 uppercase tracking-wide font-semibold">
                 Similar Games

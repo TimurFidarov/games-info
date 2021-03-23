@@ -106,7 +106,7 @@ class GamesController extends Controller
             'platforms' => collect($game['platforms'])->pluck('abbreviation')->implode(', '),
             'mRating' => isset($game['rating']) ? round($game['rating']) : '0',
             'cRating' => isset($game['aggregated_rating']) ? round($game['aggregated_rating']) . '' : '0',
-            'trailer' => isset($game['videos'][0]) ?  'https://youtube.com/watch/'.$game['videos'][0]['video_id']:null,
+            'trailer' => isset($game['videos'][0]) ?  'https://youtube.com/embed/'.$game['videos'][0]['video_id']:null,
             'screenshots' => collect($game['screenshots'])->take(9)->map(function ($screenshot) {
                 return [
                     'big' => Str::replaceFirst('thumb', 'screenshot_big', $screenshot['url']),
@@ -122,7 +122,7 @@ class GamesController extends Controller
                     'platforms' => array_key_exists('platforms', $game) ? collect($game['platforms'])->pluck('abbreviation')->implode(', ') : null,
                 ]);
             }),
-            'social' => [
+            'social' => isset($game['websites']) ? [
                 'website' => collect($game['websites'])->first(),
                 'facebook' => collect($game['websites'])->filter(function($website) {
                     return Str::contains($website['url'], 'facebook');
@@ -133,8 +133,8 @@ class GamesController extends Controller
                 'instagram' => collect($game['websites'])->filter(function($website) {
                     return Str::contains($website['url'], 'instagram');
 
-                })->first(),
-            ]
+                })->first()
+            ] : null
         ]);
     }
 }
